@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/footstep_listone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line_btn"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomBar">
+        <Button
+            android:id="@+id/share_life_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorBlue"
+            android:text="@string/Share"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerview1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/line_btn"
+        android:layout_below="@id/head"
+        android:padding="4dp" />
+
+    <LinearLayout
+
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#cfd8dc"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#FFE3E3E3"
+            android:text="@string/spot"
+            android:src="@drawable/home"
+            android:textColor="#515658"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#FFE3E3E3"
+            android:text="@string/footstep"
+            android:src="@drawable/foot"
+            android:textColor="#515658"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#FFE3E3E3"
+            android:text="@string/Me"
+            android:src="@drawable/personal"
+            android:textColor="#515658"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/android-support-v4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="307c1cc532eabbf1d135b43e5c983c9da700449d">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-support-v4_b5a6aac73a88a420a57eee0971d9fea759605eb0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/AMap_Search_V5.0.0_20170309.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="315a916b8186d7c5496a81cf683455c558196a1d">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/AMap_Search_V5.0.0_20170309_784224f469414736c2f91caf724b1da4d19c5349/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/pinyin4j-2.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/pinyin4j-2.5.0_6b1116ff5c74fbc33b8d43ef8caeec448b52690a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/AMapNavi_V1.9.4_20161222.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="801ce595ef97a678d310cd2d2855195a9daa48ee">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/AMapNavi_V1.9.4_20161222_4dee2840f1f7bf5945471dbfbdb3931184b10c50/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/xstream-1.4.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bce3282142b63068260f021fcbe48b72e8d71a1a">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/xstream-1.4.7_bb1c189d2e699528494500e99aa4b8753fb18024/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/Volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/Volley_41768e2e02a2558ca006f5c505feccda0fd6925b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/AMap_Location_V3.3.0_20170118.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="299ccce875c1bbd5eb2802923ae89946e22b7ee6">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/AMap_Location_V3.3.0_20170118_76ba90b77e1b258b0dc4f61f78824f1bdcbe1ae1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/Msc.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="994d12017bc2c9ba570180cde5500689d134e6e6">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/Msc_98d564e06f7dd8a8d131dcef99838f2011677423/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/libs/Android_Map3D_SDK_V5.0.0_20170311.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1138283bb2b30bbf424a02eeeadab84edfc1571c">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/2/Android_Map3D_SDK_V5.0.0_20170311_82d91fb2ba73cd7f6a80645c85feeb684a618ce7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ea454a3f4496d168432edf29024f6757930a08b1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6fb175790996eb4e0ede2ec7c421714161d41f6d">
+        <dex dex="/Users/lianghuanxiang/Desktop/Travel1/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c090936c8bf98548079d5231bce44af0626ec3f7/classes.dex" />
+    </item>
+
+</items>

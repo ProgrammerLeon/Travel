@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#ebebeb"
+    tools:context="com.example.administrator.travel.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#cfd8dc"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/bottomBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="60sp">
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#FFE3E3E3"
+            android:text="@string/spots"
+            android:src="@drawable/home"
+            android:textColor="#515658"
+            android:textSize="18sp"/>
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#FFE3E3E3"
+            android:text="@string/footstep"
+            android:src="@drawable/foot"
+            android:textColor="#515658"
+            android:textSize="18sp"
+            android:onClick="footstep"/>
+
+        <ImageButton
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="#FFE3E3E3"
+            android:text="@string/Me"
+            android:src="@drawable/personal"
+            android:textColor="#515658"
+            android:textSize="18sp"
+            android:onClick="me"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerview"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/bottomBar"/>
+
+</RelativeLayout>

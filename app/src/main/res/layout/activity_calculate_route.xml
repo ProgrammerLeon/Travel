@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey"
+                tools:context=".RestRouteShowActivity">
+
+    <!--tools:context=".RestRouteShowActivity"-->
+    <!--顶部地址显示栏-->
+    <RelativeLayout
+        android:id="@+id/routemap_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/naInfo"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/more_background">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/backBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/titleicon_back"
+                    android:clickable="true"/>
+
+                <Button
+                    android:id="@+id/markerLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="80dp"
+                    android:background="#FFE3E3E3"/>
+
+                <Button
+                    android:id="@+id/currentLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFE3E3E3"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/title_background">
+
+            <LinearLayout
+                android:id="@+id/routemap_choose"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/more_background"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onDriveClick">
+
+                    <ImageView
+                        android:id="@+id/route_drive"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/route_drive_normal"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onBusClick">
+
+                    <ImageView
+                        android:id="@+id/route_bus"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/route_bus_normal"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onWalkClick">
+
+                    <ImageView
+                        android:id="@+id/route_walk"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/route_walk_normal"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <!--地图控制UI-->
+    <RelativeLayout
+        android:id="@+id/ctrl_UI"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/calculate_route_strategy_tab"
+        android:layout_below="@+id/routemap_header"
+
+        android:visibility="visible">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.amap.api.maps.MapView>
+
+        <ImageButton
+            android:id="@+id/prefBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="140dp"
+            android:background="#ffffff"
+            android:src="@drawable/route_car_result_prefer_icon_normal"/>
+
+
+        <ImageButton
+            android:id="@+id/trafficBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="90dp"
+            android:background="#ffffff"
+            android:src="@drawable/drive_map_icon_traffic_day_checked"/>
+
+
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="130dp"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="190dp">
+
+            <ImageButton
+                android:id="@+id/imageButtonOUT"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imageButtonIN"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/drive_map_icon_zoomout_portrait_day"
+                app:srcCompat="@drawable/drive_map_icon_zoomout_portrait_day"/>
+
+            <ImageButton
+                android:id="@+id/imageButtonIN"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/drive_map_icon_zoomin_portrait_day"
+                app:srcCompat="@drawable/drive_map_icon_zoomin_portrait_day"/>
+
+            <ImageButton
+                android:id="@+id/location_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/imageButtonOUT"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/location_selected"
+                android:visibility="gone"
+                app:srcCompat="@drawable/location_selected"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--底部按钮-->
+
+    <Button
+        android:id="@+id/calculate_route_start_navi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@color/colorBlue"
+        android:text="开始导航"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/calculate_route_navi_overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/calculate_route_start_navi"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"/>
+
+    <LinearLayout
+        android:id="@+id/calculate_route_strategy_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/calculate_route_navi_overview"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/route_line_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/route_line_one_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorBlue"/>
+
+            <TextView
+                android:id="@+id/route_line_one_strategy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/route_line_one_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/route_line_one_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/route_line_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/route_line_two_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorBlue"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/route_line_two_strategy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/route_line_two_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/route_line_two_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/route_line_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/route_line_three_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorBlue"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/route_line_three_strategy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/route_line_three_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/route_line_three_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--公交ListView-->
+    <LinearLayout
+        android:id="@+id/bus_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/routemap_header"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ListView
+            android:id="@+id/bus_result_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:fadingEdgeLength="0dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000"></ListView>
+    </LinearLayout>
+
+</RelativeLayout>

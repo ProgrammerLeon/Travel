@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--地图及其控制UI-->
+    <RelativeLayout
+        android:id="@+id/main_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonGroup"
+       >
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1">
+
+        </com.amap.api.maps.MapView>
+
+        <TextView
+            android:id="@+id/location_errInfo_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/red"
+            android:text="TextView"
+            android:textColor="@color/darkgrey"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="170dp"
+            android:layout_marginLeft="8dp">
+
+            <ImageButton
+                android:id="@+id/location_button_main"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/location_selected"
+                app:srcCompat="@drawable/navi_idle_gps_unlocked" />
+
+            <ImageButton
+                android:id="@+id/imageButtonOUT_main"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/imageButtonIN_main"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/drive_map_icon_zoomout_portrait_day"
+                app:srcCompat="@drawable/drive_map_icon_zoomout_portrait_day" />
+
+            <ImageButton
+                android:id="@+id/imageButtonIN_main"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/drive_map_icon_zoomin_portrait_day"
+                app:srcCompat="@drawable/drive_map_icon_zoomin_portrait_day" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <!--搜索框-->
+    <RelativeLayout
+        android:id="@+id/search_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="@dimen/offset_title"
+        android:layout_marginRight="@dimen/offset_title"
+        android:layout_marginStart="@dimen/offset_title"
+        android:layout_marginTop="@dimen/offset_title"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/offlinearrow_tab2_pressed"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingEnd="12dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingStart="12dp"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <LinearLayout
+            android:id="@+id/search_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_search"
+            android:layout_toStartOf="@+id/btn_search"
+            android:background="@drawable/search_input_half"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <AutoCompleteTextView
+                android:id="@+id/keyWord"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:completionThreshold="1"
+                android:drawableLeft="@drawable/search_input"
+                android:background="@null"
+                android:dropDownVerticalOffset="1.0dip"
+                android:hint="请输入关键字"
+                android:imeOptions="actionDone"
+                android:inputType="text|textAutoComplete"
+                android:maxLength="20"
+                android:paddingRight="37.0dip"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textColorHint="@color/darkgrey"
+                android:textSize="16.0sp" />
+            <!--android:background="@drawable/text_search"-->
+
+        </LinearLayout>
+    </RelativeLayout>
+<!--ListView-->
+    <LinearLayout
+        android:id="@+id/point_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_bar_layout"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ListView
+            android:id="@+id/point_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:fadingEdgeLength="0dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000"></ListView>
+    </LinearLayout>
+
+
+    <!--底部按钮-->
+    <LinearLayout
+        android:id="@+id/buttonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="0dp">
+
+            <Button
+                android:id="@+id/topInfoBtn"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:background="@color/white" />
+
+            <ImageButton
+                android:id="@+id/imageBtn_navi"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/white"
+                android:src="@drawable/search_route_go_here_normal"
+                app:srcCompat="@mipmap/ic_launcher" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="0dp"
+            android:background="#ffffff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

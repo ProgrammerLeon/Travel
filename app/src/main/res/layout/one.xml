@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:card_view="http://schemas.android.com/tools"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#FFFFFF"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:elevation="4dp"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="4dp">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+            <!--<TextView-->
+            <!--android:id="@+id/ivText"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_below="@id/ivImage"-->
+            <!--android:background="#bababa"-->
+            <!--android:drawableLeft="@drawable/ok"-->
+            <!--android:drawableRight="@drawable/mark"-->
+            <!--android:text=""/>-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/ivImage"
+                android:background="#FFE3E3E3">
+
+                <TextView
+                    android:id="@+id/ivText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#FFE3E3E3"
+                    android:paddingTop="10px"
+                    android:layout_toRightOf="@+id/ok"
+                    android:layout_toLeftOf="@+id/mark"
+                    android:textColor="@color/bar_grey_90"
+                    android:text=""/>
+
+                <ImageButton
+                    android:id="@+id/ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="#FFE3E3E3"
+                    android:src="@drawable/ok_idle"/>
+
+
+                <ImageButton
+                    android:id="@+id/mark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="#FFE3E3E3"
+                    android:src="@drawable/mark"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

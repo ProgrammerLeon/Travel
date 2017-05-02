@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE3E3E3"
+    tools:context="com.example.administrator.travel.About">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image_no_use"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home">
+        </ImageView>
+        <TextView
+            android:layout_below="@+id/image_no_use"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:textColor="@color/bar_grey"
+            android:text="本软件由大二学生小组开发，经济支撑不足，开发周期短，功能没有完善的地方还请见谅。"
+            />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

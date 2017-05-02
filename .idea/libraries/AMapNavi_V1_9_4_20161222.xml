@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AMapNavi_V1.9.4_20161222">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/AMapNavi_V1.9.4_20161222.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
